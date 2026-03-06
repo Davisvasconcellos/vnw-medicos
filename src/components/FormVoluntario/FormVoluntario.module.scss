@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use '../../styles/variables' as *;
 
 .form {
@@ -94,7 +95,7 @@
             transition: background-color 0.2s, transform 0.2s;
 
             &:hover {
-                background-color: darken($color-secondary-green, 5%);
+                background-color: color.adjust($color-secondary-green, $lightness: -5%);
                 transform: translateY(-2px);
             }
         }
