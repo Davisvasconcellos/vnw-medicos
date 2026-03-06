@@ -1,0 +1,136 @@
+@use '../../styles/variables' as *;
+
+.header {
+    background-color: $color-white;
+    border-bottom: 1px solid #E0E0E0;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-weight: 700;
+        font-size: 1.125rem;
+        color: $color-text-dark;
+        z-index: 1002;
+
+        .iconWrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+
+            .heartIcon {
+                position: absolute;
+                z-index: 1;
+            }
+        }
+    }
+
+    .hamburger {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: $color-text-dark;
+        z-index: 1002;
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+    }
+
+    .nav {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        @media (max-width: 768px) {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 70%;
+            height: 100vh;
+            background-color: $color-white;
+            flex-direction: column;
+            justify-content: flex-start; /* Alinhamento ao topo */
+            align-items: stretch; /* Esticar itens para largura total */
+            padding: 5rem 0 0 0; /* Padding top maior para não cobrir o botão fechar */
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease-in-out;
+            z-index: 1003; /* Acima do logo (1002) */
+            gap: 0; /* Remove gap para usar padding nos itens */
+
+            &.open {
+                right: 0;
+            }
+        }
+
+        .link {
+            font-weight: 500;
+            color: $color-text-dark;
+            transition: color 0.2s;
+
+            &:hover {
+                color: $color-primary-green;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 1.125rem;
+                padding: 1.5rem 2rem;
+                border-bottom: 1px solid #F0F0F0;
+                transition: background-color 0.2s;
+                
+                &:hover {
+                    background-color: #F5F5F5; /* Cinza claro no hover */
+                    color: $color-text-dark; /* Mantém cor escura */
+                }
+            }
+        }
+
+        .button {
+            background-color: $color-primary-green;
+            color: $color-white;
+            padding: 0.625rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+
+            &:hover {
+                background-color: $color-secondary-green;
+            }
+
+            @media (max-width: 768px) {
+                background-color: transparent;
+                color: $color-text-dark;
+                padding: 1.5rem 2rem;
+                border-radius: 0;
+                font-weight: 500;
+                font-size: 1.125rem;
+                text-align: left;
+                width: 100%;
+                border-bottom: 1px solid #F0F0F0;
+
+                &:hover {
+                    background-color: #F5F5F5;
+                    color: $color-text-dark;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+@use '../../styles/variables' as *;
+
+.main {
+    background-color: #F9F9F9;
+    min-height: calc(100vh - 80px - 300px);
+
+    .section {
+        padding: 5rem 20px;
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+
+            h2 {
+                font-size: 3rem;
+                font-weight: 700;
+                color: $color-text-dark;
+                margin-bottom: 1rem;
+            }
+
+            .subtitle {
+                font-size: 1.125rem;
+                color: #555;
+                margin-bottom: 4rem;
+            }
+
+            .cardsGrid {
+                display: flex;
+                gap: 2rem;
+                
+                @media (max-width: 768px) {
+                    flex-direction: column;
+                }
+
+                & > * {
+                    flex: 1;
+                }
+            }
+        }
+    }
+
+    .formSection {
+        background-color: $color-primary-green;
+        padding: 5rem 20px;
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+    }
+}

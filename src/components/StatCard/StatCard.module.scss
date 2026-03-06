@@ -1,0 +1,34 @@
+@use '../../styles/variables' as *;
+
+.card {
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    background-color: $color-white;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 250px; /* Altura fixa para alinhar com o design */
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        border-color: $color-primary-green;
+    }
+
+    h3 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: $color-secondary-green;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1rem;
+        font-weight: 500;
+        color: $color-text-dark;
+    }
+}

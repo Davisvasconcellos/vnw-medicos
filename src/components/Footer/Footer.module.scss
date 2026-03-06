@@ -1,0 +1,100 @@
+@use '../../styles/variables' as *;
+
+.footer {
+    background-color: $color-footer-bg;
+    color: $color-light-gray;
+    padding: 4rem 0 2rem;
+    font-size: 0.875rem;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 3rem;
+        margin-bottom: 3rem;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+
+        .brand {
+            flex: 1;
+            min-width: 250px;
+
+            .logo {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                font-weight: 700;
+                font-size: 1.125rem;
+                color: $color-white;
+                margin-bottom: 1rem;
+
+                .iconWrapper {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 40px;
+                    height: 40px;
+
+                    .heartIcon {
+                        position: absolute;
+                        z-index: 1;
+                        color: white;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+
+        .contact, .social {
+            flex: 1;
+            min-width: 200px;
+
+            h3 {
+                color: $color-white;
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.75rem;
+                    
+                    svg {
+                        font-size: 1.25rem;
+                    }
+
+                    a {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.75rem;
+                        transition: color 0.2s;
+
+                        &:hover {
+                            color: $color-primary-green;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .copyright {
+        border-top: 1px solid #333;
+        padding-top: 2rem;
+        text-align: center;
+        color: #888;
+        font-size: 0.75rem;
+    }
+}
